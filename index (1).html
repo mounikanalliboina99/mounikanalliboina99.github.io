@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mounika Nalliboina — Full-Stack Java · QA Automation · Applied AI</title>
+<meta name="description" content="Mounika Nalliboina — Software engineer specializing in full-stack Java development, QA automation, and applied AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D1117; --surface:#161B22; --surface-2:#1C2129; --border:#30363D;
+    --text:#E6EDF3; --text-muted:#8B949E; --accent:#2DD4BF; --accent-soft:rgba(45,212,191,0.12);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:'Work Sans',sans-serif; line-height:1.5; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  h1,h2,.display{ font-family:'Space Grotesk',sans-serif; }
+  .mono{ font-family:'JetBrains Mono',monospace; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 32px; }
+  nav{ position:sticky; top:0; z-index:10; background:rgba(13,17,23,0.85); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+  nav .wrap{ display:flex; justify-content:space-between; align-items:center; padding-top:18px; padding-bottom:18px; }
+  .nav-name{ font-weight:600; font-size:15px; }
+  .nav-links{ display:flex; gap:26px; font-size:14px; font-weight:500; }
+  .nav-links a{ color:var(--text-muted); }
+  .nav-links a:hover{ color:var(--accent); }
+  .eyebrow{ font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); }
+  .hero{ display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:center; padding:72px 0 56px; }
+  .headline{ font-size:42px; font-weight:600; line-height:1.15; margin:16px 0; }
+  .headline em{ color:var(--accent); font-style:normal; }
+  .lede{ font-size:16.5px; line-height:1.7; color:var(--text-muted); max-width:520px; margin-bottom:24px; }
+  .cta-row{ display:flex; flex-wrap:wrap; gap:14px; }
+  .btn{ display:inline-block; padding:11px 20px; border-radius:8px; font-size:14.5px; font-weight:600; border:1px solid var(--border); }
+  .btn-primary{ background:var(--accent); color:#06201C; border-color:var(--accent); }
+  .btn-primary:hover{ background:#5EEAD4; text-decoration:none; }
+  .btn-ghost{ color:var(--text); }
+  .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); text-decoration:none; }
+  .term{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:24px 26px; }
+  .term-top{ display:flex; justify-content:space-between; align-items:center; font-size:12.5px; color:var(--text-muted); margin-bottom:18px; }
+  .status-dot{ display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--accent); margin-right:6px; }
+  .term-line{ font-size:13.5px; margin-bottom:14px; }
+  .term-cmd{ color:var(--accent); }
+  .term-val{ color:var(--text); font-weight:600; margin-top:3px; }
+  .stats{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; padding:36px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .stat-num{ font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:600; color:var(--text); }
+  .stat-label{ font-size:12.5px; color:var(--text-muted); margin-top:4px; }
+  section{ padding:64px 0; }
+  .sec-label{ display:flex; align-items:baseline; gap:10px; margin-bottom:28px; }
+  .sec-num{ font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent); }
+  .sec-slash{ font-size:13px; color:var(--border); }
+  .sec-title{ font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); }
+  .grid-3{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
+  .card{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:26px; }
+  .card-num{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent); margin-bottom:10px; }
+  .card-title{ font-size:16.5px; font-weight:600; margin-bottom:8px; }
+  .card-body{ font-size:14px; line-height:1.6; color:var(--text-muted); }
+  .about-text{ font-size:16px; line-height:1.75; color:#C9D1D9; max-width:680px; margin-bottom:26px; }
+  .toolkit-label{ font-size:12.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px; }
+  .pill{ display:inline-block; padding:5px 13px; background:var(--surface-2); border:1px solid var(--border); border-radius:999px; font-size:12.5px; color:#C9D1D9; margin:0 6px 8px 0; }
+  .job-row{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:2px; }
+  .job-title{ font-size:18px; font-weight:600; }
+  .job-meta{ font-size:13.5px; color:var(--text-muted); white-space:nowrap; }
+  .job-loc{ font-size:13.5px; color:var(--text-muted); margin-bottom:14px; }
+  ul.bullets{ margin:0; padding-left:20px; font-size:15px; line-height:1.75; color:#C9D1D9; }
+  ul.bullets li{ margin-bottom:6px; }
+  .proj-tag{ font-size:11.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
+  .proj-title{ font-size:17.5px; font-weight:600; margin-bottom:8px; }
+  .proj-desc{ font-size:14.5px; line-height:1.65; color:var(--text-muted); margin-bottom:14px; }
+  .edu-row{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+  .edu-degree{ font-size:16px; font-weight:600; }
+  .edu-school{ font-size:14.5px; color:var(--text-muted); }
+  footer{ border-top:1px solid var(--border); padding:36px 0; }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13.5px; color:var(--text-muted); }
+  @media (max-width:760px){
+    .hero{ grid-template-columns:1fr; padding-top:48px; }
+    .headline{ font-size:32px; }
+    .stats{ grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:28px; }
+    .grid-3{ grid-template-columns:1fr; }
+    .nav-links{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Mounika Nalliboina</div>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Full-Stack Java &middot; QA Automation &middot; Applied AI</div>
+      <h1 class="headline">I build full-stack systems &mdash; then make sure they <em>hold up</em>.</h1>
+      <p class="lede">Software engineer with nearly four years of experience spanning full-stack development (Angular, Java, Spring Boot) and QA automation (Selenium, Cucumber) at Infosys, now pursuing an MPS in Software Engineering at UMBC while building applied AI skills through an AI-powered campus navigation project.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="./resume.pdf" target="_blank" rel="noopener">Download resume ↗</a>
+        <a class="btn btn-ghost" href="mailto:hz39897@umbc.edu">Email ↗</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/mounika-nalliboina/">LinkedIn ↗</a>
+        <span class="btn btn-ghost" style="cursor:default;">(443) 251-6408</span>
+      </div>
+    </div>
+    <div class="term mono">
+      <div class="term-top">
+        <span>/profile/status</span>
+        <span><span class="status-dot"></span>Open to opportunities</span>
+      </div>
+      <div class="term-line"><span class="term-cmd">$ whoami</span><div class="term-val">Mounika Nalliboina</div></div>
+      <div class="term-line"><span class="term-cmd">$ focus --now</span><div class="term-val">Full-Stack Java &middot; QA Automation &middot; Applied AI</div></div>
+      <div class="term-line"><span class="term-cmd">$ pursuing</span><div class="term-val">MPS, Software Engineering @ UMBC</div></div>
+      <div class="term-line" style="margin-bottom:0;"><span class="term-cmd">$ based-in</span><div class="term-val">Catonsville, MD</div></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div>
+      <div class="stat-num">~4 yrs</div>
+      <div class="stat-label">Professional engineering experience</div>
+    </div>
+    <div>
+      <div class="stat-num">80%+</div>
+      <div class="stat-label">Manual regression effort cut</div>
+    </div>
+    <div>
+      <div class="stat-num">5,000+</div>
+      <div class="stat-label">Test cases automated</div>
+    </div>
+    <div>
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Students &amp; stakeholders coordinated</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-label"><span class="sec-num">01</span><span class="sec-slash">/</span><span class="sec-title">What I Do</span></div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-num">01</div>
+        <div class="card-title">Full-Stack Development</div>
+        <div class="card-body">End-to-end features with Angular, Java, and Spring Boot &mdash; responsive UIs wired to REST APIs and production data.</div>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <div class="card-title">QA Automation</div>
+        <div class="card-body">Selenium and Cucumber BDD frameworks that replace manual regression cycles and give teams confidence to release.</div>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <div class="card-title">Applied AI</div>
+        <div class="card-body">Bringing AI into real workflows &mdash; currently an AI-powered campus navigation assistant, built and researched at UMBC.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-label"><span class="sec-num">02</span><span class="sec-slash">/</span><span class="sec-title">About</span></div>
+    <p class="about-text">I started my career building full-stack features at Infosys, then moved deep into QA &mdash; designing a Selenium-Cucumber automation framework that automated 5,000+ test cases and cut manual regression effort by over 80% for a customer-facing platform used by millions. Alongside strong technical delivery, I've coordinated stakeholders, mentored peers, and led project work for groups of 20+. Now, as a graduate student at UMBC, I'm building applied AI skills on top of that foundation, most recently through an AI-powered campus navigation assistant.</p>
+    <div class="toolkit-label">Toolkit</div>
+    <div>
+      <span class="pill">Java</span><span class="pill">Angular</span><span class="pill">Spring Boot</span><span class="pill">REST APIs</span><span class="pill">SQL</span><span class="pill">PostgreSQL</span><span class="pill">MongoDB</span><span class="pill">Selenium (POM, Data-Driven)</span><span class="pill">Cucumber (BDD)</span><span class="pill">JIRA</span><span class="pill">Agile / Scrum</span><span class="pill">Python</span><span class="pill">AWS</span><span class="pill">Docker</span><span class="pill">CI/CD</span><span class="pill">GitHub</span>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-label"><span class="sec-num">03</span><span class="sec-slash">/</span><span class="sec-title">Experience</span></div>
+    <div class="job-row">
+      <div class="job-title">Senior Systems Engineer &mdash; Infosys Limited</div>
+      <div class="job-meta">Nov 2022 &ndash; May 2026</div>
+    </div>
+    <div class="job-loc">Hyderabad, India</div>
+    <ul class="bullets">
+      <li>Developed scalable full-stack features for an internal Employee &amp; Project Management application (Alcon) using Angular, Java, and Spring Boot, improving performance and usability for internal stakeholders.</li>
+      <li>Built and optimized REST APIs and backend services with Spring Boot, improving system reliability, response times, and integration across microservices.</li>
+      <li>Designed SQL queries, stored procedures, and data-cleansing workflows that eliminated duplicate employee records and improved trust in billing and analytics data.</li>
+      <li>Improved database performance through index optimization and query tuning, enabling sub-second response times during peak traffic.</li>
+      <li>Built a maintainable Selenium-Cucumber BDD automation framework for the Spectrum.net Self-Service Portal (Charter Communications), automating 5,000+ test cases and reducing manual regression effort by over 80%.</li>
+      <li>Coordinated with cross-functional teams and stakeholders on requirements, documentation, and delivery timelines for enterprise-scale releases.</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <div class="sec-label"><span class="sec-num">04</span><span class="sec-slash">/</span><span class="sec-title">Selected Projects</span></div>
+    <div style="display:flex; flex-direction:column; gap:22px;">
+
+      <div class="card">
+        <div class="proj-tag">Full-Stack Development</div>
+        <div class="proj-title">Alcon &mdash; Employee &amp; Project Management System</div>
+        <div class="proj-desc">Developed responsive Angular UI components integrated with Spring Boot REST APIs for end-to-end functionality. Optimized backend business logic and API performance while ensuring secure data handling across services. An Infosys-internal system used to track employee details, project assignments, and reporting.</div>
+        <div><span class="pill">Angular</span><span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">REST APIs</span></div>
+      </div>
+
+      <div class="card">
+        <div class="proj-tag">QA Automation</div>
+        <div class="proj-title">Charter Communications &mdash; Spectrum.net Self-Service Portal</div>
+        <div class="proj-desc">Automated 5,000+ end-to-end regression test cases using Selenium WebDriver, Java, and Cucumber (BDD), reducing manual testing effort and increasing release confidence. Managed task tracking in JIRA within an Agile team, contributing to daily stand-ups and sprint planning. Charter Communications' customer-facing platform is used by millions of subscribers to manage internet and cable accounts online.</div>
+        <div><span class="pill">Selenium WebDriver</span><span class="pill">Java</span><span class="pill">Cucumber</span><span class="pill">JIRA</span></div>
+      </div>
+
+      <div class="card">
+        <div class="proj-tag">Applied AI</div>
+        <div class="proj-title">Waypoint &mdash; AI Campus Navigation Assistant</div>
+        <div class="proj-desc">Built an AI-powered campus assistant for UMBC that automates wayfinding through a conversational chat interface paired with turn-by-turn navigation. Currently designing a faculty-advised research study comparing AI-guided, GPS-style, and traditional map navigation to measure how automated guidance affects spatial learning and memory.</div>
+        <div><span class="pill">AI / Conversational UX</span><span class="pill">Navigation</span><span class="pill">Applied Research</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-label"><span class="sec-num">05</span><span class="sec-slash">/</span><span class="sec-title">Education</span></div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-degree">MPS, Software Engineering</div>
+        <div class="edu-school">University of Maryland, Baltimore County (UMBC)</div>
+      </div>
+      <div class="job-meta">Aug 2026 &ndash; Present</div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-degree">B.Tech, Civil Engineering</div>
+        <div class="edu-school">Gudlavalleru Engineering College (GEC)</div>
+      </div>
+      <div class="job-meta">Jun 2018 &ndash; May 2022</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-label"><span class="sec-num">06</span><span class="sec-slash">/</span><span class="sec-title">Leadership &amp; Achievements</span></div>
+    <ul class="bullets" style="margin-bottom:18px;">
+      <li><strong>Ladies Representative, Student Council</strong> (Aug 2018 &ndash; May 2022) &mdash; primary liaison between 50+ students, faculty, and administration for 4 consecutive years; received 4 consecutive years of Appraisal Awards for leadership.</li>
+      <li><strong>Event Coordinator, RACE Club</strong> (Aug 2021 &ndash; May 2022) &mdash; planned and led logistics for technical workshops and seminars for 200+ attendees.</li>
+      <li><strong>Lab Mentor, Department of Civil Engineering</strong> (Aug 2021 &ndash; May 2022) &mdash; supported faculty with lab operations, student guidance, and practical exam proctoring.</li>
+    </ul>
+    <div style="font-size:15px; line-height:1.8; color:#C9D1D9;">Pratibha Award, Government of Andhra Pradesh, for academic excellence &middot; Infosys Performance Recognition for outstanding project contributions</div>
+  </section>
+
+  <section id="contact" style="padding-bottom:24px;">
+    <div class="sec-label"><span class="sec-num">07</span><span class="sec-slash">/</span><span class="sec-title">Contact</span></div>
+    <h2 class="display" style="font-size:26px; font-weight:600; margin:0 0 16px;">Open to full-stack, QA automation, and AI-adjacent roles.</h2>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:hz39897@umbc.edu">hz39897@umbc.edu ↗</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/mounika-nalliboina/">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="./resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Mounika Nalliboina</span>
+    <span><a href="https://www.linkedin.com/in/mounika-nalliboina/">LinkedIn ↗</a> &middot; <a href="./resume.pdf" target="_blank" rel="noopener">Resume ↗</a> &middot; <a href="mailto:hz39897@umbc.edu">Email ↗</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
